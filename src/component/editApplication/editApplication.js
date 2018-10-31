@@ -45,7 +45,7 @@ export default class EditApplications extends React.Component {
       availableToStart: this.state.availableToStart,
       technicalSkillsAndCourses: this.state.technicalSkillsAndCourses,
       shortPersonalPresentation: this.state.shortPersonalPresentation,
-      studyFromHome: this.state.studyFromHome.toString(),
+      studyFromHome: this.state.studyFromHome,
     }
 
     var listOfApplication = JSON.parse(localStorage.getItem("applicationsList")) || []
