@@ -60,12 +60,7 @@ export default class EditApplications extends React.Component {
       this.props.history.push('/create');
       return
     }
-
-    var application = JSON.parse(localStorage.getItem("applicationsList"))[this.props.match.params.id]
-    console.log(application)
-    // this.setState(JSON.parse(application))
     this.setState(JSON.parse(localStorage.getItem("applicationsList"))[this.props.match.params.id])
-
   }
 
   render() {
