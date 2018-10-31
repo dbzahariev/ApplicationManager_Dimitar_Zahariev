@@ -3,15 +3,15 @@ import Application from './application'
 
 export default class Home extends React.Component {
     state = {
-        mainList: [],
+        applicationsList: [],
         isEdit: false
       };
     
       remApplication = (index)=>{
-        let listOfApplication =  JSON.parse(localStorage.getItem("mainList")) || []
+        let listOfApplication =  JSON.parse(localStorage.getItem("applicationsList")) || []
         listOfApplication.splice(index,1)
         
-        localStorage.setItem("mainList", JSON.stringify(listOfApplication));
+        localStorage.setItem("applicationsList", JSON.stringify(listOfApplication));
         window.location.reload(true);
       }
     
@@ -21,7 +21,7 @@ export default class Home extends React.Component {
       }
     
       componentDidMount = () => {
-        this.setState({mainList: JSON.parse(localStorage.getItem("mainList")) || []})
+        this.setState({applicationsList: JSON.parse(localStorage.getItem("applicationsList")) || []})
       }
     
       render() {
@@ -33,7 +33,7 @@ export default class Home extends React.Component {
 
             <div className="list">
                 <ul className="row">
-                    {this.state.mainList.map((application, index)=>{
+                    {this.state.applicationsList.map((application, index)=>{
                       return <Application key={index}
                       editApplication={this.editApplication.bind(application,index)} 
                       remApplication={this.remApplication.bind(application, index)} 
