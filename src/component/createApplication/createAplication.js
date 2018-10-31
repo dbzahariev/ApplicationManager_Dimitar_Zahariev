@@ -4,12 +4,12 @@ export default class CreateApplications extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-          name: "sa",
-          email: "sa",
-          age: "2",
-          phoneNumber: "sda",
-          preferredWayOfCommunication: "22",
-          englishLevel: "A1",
+          name: "",
+          email: "",
+          age: "",
+          phoneNumber: "",
+          preferredWayOfCommunication: "",
+          englishLevel: "",
           availableToStart: "",
           technicalSkillsAndCourses: "",
           shortPersonalPresentation: "",
@@ -79,11 +79,11 @@ export default class CreateApplications extends React.Component {
         <br />
           <span>Preferred Way of Communication: </span>
           <label>Email: 
-            <input type="radio" name="preferredWayOfCommunication" required value="email" onChange={this.handleInputChange} />
+            <input type="radio" name="preferredWayOfCommunication" required value="email" checked={this.state.preferredWayOfCommunication === "email"} onChange={this.handleInputChange} />
           </label>
           <span> </span>
           <label>Phone: 
-            <input type="radio" name="preferredWayOfCommunication" required value="phone" onChange={this.handleInputChange} />
+            <input type="radio" name="preferredWayOfCommunication" required value="phone" checked={this.state.preferredWayOfCommunication === "phone"} onChange={this.handleInputChange} />
           </label>
           <br/>
         <label>English Level:
